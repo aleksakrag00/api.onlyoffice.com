@@ -1,0 +1,45 @@
+.docCardListItem {
+  margin-bottom: 2rem;
+}
+
+.docCardListItem a {
+  gap: var(--base-size-24);
+  height: 100%;
+  padding: var(--base-size-32);
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+  display: flex;
+}
+
+.docCardListItem a:hover {
+  box-shadow: var(--temp-color-shadow-default-small);
+  border-color: var(--card-border-color);
+}
+
+.docCardListItem > * {
+  gap: var(--base-size-24);
+  height: 100%;
+  padding: var(--base-size-32);
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+  display: flex;
+}
+
+.docCardListItem h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.docCardListItem p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: inherit;
+}

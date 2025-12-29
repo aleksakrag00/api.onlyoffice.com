@@ -29,7 +29,7 @@
   --base-text-font-weight-medium: 500;
   --base-text-font-weight-semi-bold: 600;
   --base-text-font-weight-bold: 700;
-  --base-text-letter-spacing-0-04: .04em;
+  --base-text-letter-spacing-0-04: 0.04em;
   --base-text-line-height-1-25: 1.25;
   --base-text-line-height-1-50: 1.5;
 
@@ -52,7 +52,6 @@
 
   --card-border-color: #ededed;
   --card-background-color: var(--ifm-card-background-color);
-
 
   /* START STATUS OPENAPI */
   --ifm-color-get: #05b870;
@@ -219,17 +218,17 @@
   --button-bg-color-hover: #f5f5faC0;
 }
 
-[data-theme='light'] img[src$='#gh-dark-mode-only'],
-[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+[data-theme="light"] img[src$="#gh-dark-mode-only"],
+[data-theme="dark"] img[src$="#gh-light-mode-only"] {
   display: none;
 }
 
-html[data-theme='light'] {
+html[data-theme="light"] {
   /* --ifm-menu-color-background-active: var(--c-blue-0); */
   --ifm-menu-color: #444;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -237,6 +236,9 @@ html[data-theme='dark'] {
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* I added this color for dark mode box shadow setting */
+  --temp-color-shadow-default-small: 0 7px 15px 0 #141617;
 
   --card-border-color: #454545;
 
@@ -284,31 +286,31 @@ html[data-theme='dark'] {
     }
   }
 }
-.get>.menu__link:after {
-      content: "get";
-      color: var(--ifm-color-get);
-    }
-.post>.menu__link:after {
-      content: "post";
-      color: var(--ifm-color-post);
-    }
-.delete>.menu__link:after {
-      content: "del";
-      color: var(--ifm-color-delete);
-    }
-.put>.menu__link:after {
-      content: "put";
-      color: var(--ifm-color-put-patch);
-    }
-.patch>.menu__link:after {
-      content: "patch";
-      color: var(--ifm-color-put-patch);
-    }
+.get > .menu__link:after {
+  content: "get";
+  color: var(--ifm-color-get);
+}
+.post > .menu__link:after {
+  content: "post";
+  color: var(--ifm-color-post);
+}
+.delete > .menu__link:after {
+  content: "del";
+  color: var(--ifm-color-delete);
+}
+.put > .menu__link:after {
+  content: "put";
+  color: var(--ifm-color-put-patch);
+}
+.patch > .menu__link:after {
+  content: "patch";
+  color: var(--ifm-color-put-patch);
+}
 /* END OPENAPI */
 
 /* START NAVBAR GITHUB BUTTON */
 .header-github-link::before {
-  content: '';
+  content: "";
   width: 24px;
   height: 24px;
   display: flex;
@@ -325,16 +327,16 @@ html[data-theme='dark'] {
 
 /* START SIDEBAR */
 #__docusaurus {
-  [class^=sidebar_]>.menu {
-    padding: .5rem 1.5rem .5rem .5rem;
+  [class^="sidebar_"] > .menu {
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   }
 
   .menu__link {
-    font-size: .813rem;
+    font-size: 0.813rem;
     font-weight: 500;
-    letter-spacing: -.01em;
+    letter-spacing: -0.01em;
     line-height: 16px;
-    transition: opacity .2s ease-out;
+    transition: opacity 0.2s ease-out;
   }
 
   .menu__list-item-collapsible {
@@ -354,7 +356,8 @@ html[data-theme='dark'] {
 
   .menu__caret::before,
   .menu__link--sublist:after {
-    background: url('../../static/icons/arrow-sidebar.svg') center / var(--dropdown-icon-width) var(--dropdown-icon-height);
+    background: url("../../static/icons/arrow-sidebar.svg") center /
+      var(--dropdown-icon-width) var(--dropdown-icon-height);
     background-repeat: no-repeat;
     height: var(--dropdown-icon-height);
     margin-block-end: 0;
@@ -364,14 +367,18 @@ html[data-theme='dark'] {
     width: var(--dropdown-icon-width);
   }
 
-  .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible .menu__link {
+  .theme-doc-sidebar-item-category-level-1
+    > .menu__list-item-collapsible
+    .menu__link {
     color: var(--sidebar-category-c);
-    font-size: .938rem;
+    font-size: 0.938rem;
     font-weight: 600;
     line-height: 100%;
   }
 
-  .theme-doc-sidebar-item-category-level-1>.menu__list>.menu__list-item:last-of-type {
+  .theme-doc-sidebar-item-category-level-1
+    > .menu__list
+    > .menu__list-item:last-of-type {
     padding-block-end: 1.5rem;
   }
 
@@ -401,7 +408,7 @@ main {
 }
 
 .menu__list-item-collapsible {
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 .menu__link--active:not(.menu__link--sublist) {
@@ -417,20 +424,20 @@ main {
 }
 
 .menu__link {
-  font-size: .900rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   line-height: 20px;
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
-button svg[class*='copyButtonSuccessIcon'] {
+button svg[class*="copyButtonSuccessIcon"] {
   top: 50%;
   left: 50%;
   opacity: 0;
 }
 
-button[class*='copyButtonCopied'] svg[class*='copyButtonSuccessIcon'] {
+button[class*="copyButtonCopied"] svg[class*="copyButtonSuccessIcon"] {
   top: 50%;
   left: 50%;
 }
@@ -453,7 +460,7 @@ button[class*='copyButtonCopied'] svg[class*='copyButtonSuccessIcon'] {
   border: none;
 }
 
-.conversion-table table thead tr{
+.conversion-table table thead tr {
   border: none;
 }
 
@@ -482,7 +489,7 @@ video {
   width: 100%;
 }
 
-[data-theme='light'] .dark-video,
-[data-theme='dark'] .light-video {
+[data-theme="light"] .dark-video,
+[data-theme="dark"] .light-video {
   display: none;
 }
